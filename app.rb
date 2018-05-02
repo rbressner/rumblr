@@ -9,7 +9,7 @@ set :database, "sqlite3:app.db"
 
 get "/" do
   if session[:user_id]
-    erb :signed_in_homepage
+    erb :profile
   else
     erb :index
   end
@@ -41,7 +41,7 @@ post "/sign-in" do
 
     # if user does not exist or password does not match then
     #   redirect the user to the sign in page
-    redirect "/profile"
+    redirect "/"
   end
 end
 
@@ -89,9 +89,11 @@ end
 post "/new-post" do
   @post = Post.create(
     title: params[:title],
-    content: params[:content],
-    image: params[:image]
+    content: params[:content]
+    # image: params[:image]
   )
+  session[:post_id] = @post.id
+
   redirect "/profile"
 end
 
