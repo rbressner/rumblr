@@ -4,7 +4,6 @@ class NewPost < ActiveRecord::Migration[5.2]
       t.string :username
       t.string :title
       t.text :content
-      t.blob :image
       t.datetime :created_at
     end
   end

@@ -79,8 +79,8 @@ end
 post "/new-post" do
   @post = Post.create(
     title: params[:title],
-    content: params[:content]
-    # image: params[:image]
+    content: params[:content],
+    image: params[:image]
   )
   session[:post_id] = @post.id
 
@@ -92,7 +92,9 @@ get "/profile" do
   @user = User.find(session[:user_id])
   @name = @user.username
 
-  @posts = @user.profile.posts
+  @posts = Post.find_by(session[:user_id])
+  puts @posts
+  # @posts = @user.profile.posts
 
   erb :profile
 end
