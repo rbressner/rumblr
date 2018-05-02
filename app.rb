@@ -15,40 +15,32 @@ get "/" do
   end
 end
 
-# displays sign in form
+
 get "/sign-in" do
 
   erb :sign_in
 end
 
-# responds to sign in form
-post "/sign-in" do
-  @user = User.find_by(username: params[:username])
 
-  # checks to see if the user exists
-  #   and also if the user password matches the password in the db
+post "/sign-in" do
+
+  @user = User.find_by(email: params[:email])
+  puts "this better be my user: #{@user.inspect}"
   if @user && @user.password == params[:password]
-    # this line signs a user in
+
     session[:user_id] = @user.id
 
-    # lets the user know that something is wrong
-    flash[:info] = "You have been signed in"
-
-    # redirects to the home page
     redirect "/profile"
   else
-    # lets the user know that something is wrong
+
     flash[:warning] = "Your username or password is incorrect"
 
-    # if user does not exist or password does not match then
-    #   redirect the user to the sign in page
+
     redirect "/"
   end
 end
 
-# displays signup form
-#   with fields for relevant user information like:
-#   username, password
+
 get "/sign-up" do
   def username
     @name = params[:username]
@@ -60,34 +52,27 @@ end
 post "/sign-up" do
   @user = User.create(
     username: params[:username],
-    password: params[:password]
+    password: params[:password],
+    email: params[:email],
+    birthday: params[:birthday]
   )
   @name = params[:username]
-  # this line does the signing in
+
   session[:user_id] = @user.id
 
-  # lets the user know they have signed up
-  flash[:info] = "Thank you for signing up"
-
-  # assuming this page exists
   redirect "/profile"
 end
 
-# when hitting this get path via a link
-#   it would reset the session user_id and redirect
-#   back to the homepage
-get "/sign-out" do
-  # this is the line that signs a user out
-  session[:user_id] = nil
 
-  # lets the user know they have signed out
-  flash[:info] = "You have been signed out"
+get "/sign-out" do
+
+  session[:user_id] = nil
 
   redirect "/"
 end
 
 get "/new-post" do
-  # redirect "/profile"
+
   erb :new_post
 end
 
@@ -104,7 +89,17 @@ end
 
 get "/profile" do
 
-  @posts = Post.all
+  @user = User.find(session[:user_id])
+  @name = @user.username
+
+  @posts = @user.profile.posts
 
   erb :profile
+end
+
+post "/profile" do
+  @profile = Profile.create(
+    username: params[:username],
+    content: params[:content]
+  )
 end

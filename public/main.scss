@@ -33,6 +33,10 @@ input[type=file] {
   padding-bottom: 10px;
   border: 1px solid black;
 }
+input[type=date]{
+  height: 40px;
+  border: 1px solid black;
+}
 input[type=file]:hover {
   cursor: pointer;
 }
