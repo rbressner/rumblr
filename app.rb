@@ -17,6 +17,7 @@ end
 
 # displays sign in form
 get "/sign-in" do
+
   erb :sign_in
 end
 
@@ -49,6 +50,10 @@ end
 #   with fields for relevant user information like:
 #   username, password
 get "/sign-up" do
+  def username
+    @name = params[:username]
+  end
+
   erb :sign_up
 end
 
@@ -57,7 +62,7 @@ post "/sign-up" do
     username: params[:username],
     password: params[:password]
   )
-
+  @name = params[:username]
   # this line does the signing in
   session[:user_id] = @user.id
 
@@ -98,5 +103,8 @@ post "/new-post" do
 end
 
 get "/profile" do
+
+  @posts = Post.all
+
   erb :profile
 end

@@ -1,11 +1,5 @@
 body {
-  background-color: black;
-  background-image: url("./eye1.png");
-  // background-repeat: no-repeat;
-  // background-position: center top;
-  // background-attachment: fixed;
   font-family: 'Cinzel', serif;
-  color: white;
   text-align: center;
 }
 
@@ -15,8 +9,7 @@ body {
   left: 40%;
   width: 20%;
   a {
-    border: 2px solid white;
-    color: white;
+    border: 2px solid black;
     text-align: center;
     font-size: 200%;
     text-decoration: none;
@@ -25,9 +18,27 @@ body {
 .eye {
   position: absolute;
   margin: auto;
-  top: 0;
+  top: 15%;
   right: 0;
   left: 0;
-  width: 50%;
-
+  width: 20%;
+}
+input[type=text], input[type=email], input[type=password] {
+  width: 20%;
+  height: 40px;
+  border: 1px solid black;
+}
+input[type=file] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+}
+input[type=file]:hover {
+  cursor: pointer;
+}
+input[type=submit] {
+  height: 40px;
+}
+input[type=submit]:hover {
+  cursor: pointer;
 }
