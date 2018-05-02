@@ -34,14 +34,14 @@ post "/sign-in" do
     flash[:info] = "You have been signed in"
 
     # redirects to the home page
-    redirect "/"
+    redirect "/profile"
   else
     # lets the user know that something is wrong
     flash[:warning] = "Your username or password is incorrect"
 
     # if user does not exist or password does not match then
     #   redirect the user to the sign in page
-    redirect "/sign-in"
+    redirect "/profile"
   end
 end
 
@@ -65,7 +65,7 @@ post "/sign-up" do
   flash[:info] = "Thank you for signing up"
 
   # assuming this page exists
-  redirect "/"
+  redirect "/profile"
 end
 
 # when hitting this get path via a link
@@ -79,4 +79,22 @@ get "/sign-out" do
   flash[:info] = "You have been signed out"
 
   redirect "/"
+end
+
+get "/new-post" do
+  # redirect "/profile"
+  erb :new_post
+end
+
+post "/new-post" do
+  @post = Post.create(
+    title: params[:title],
+    content: params[:content],
+    image: params[:image]
+  )
+  redirect "/profile"
+end
+
+get "/profile" do
+  erb :profile
 end

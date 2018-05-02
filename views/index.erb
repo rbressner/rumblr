@@ -1,1 +1,28 @@
+<h1>Welcome</h1>
+<% flash.keys.each do |type| %>
+  <div class="flash <%= type %>">
+    <%= flash[type] %>
+    <a class="close-button" href="#">x</a>
+  </div>
+<% end %>
 
+<ul class="entrance">
+<% if session[:user_id] %>
+
+  <!-- only show this code when signed in -->
+
+  <!-- clicking on this link will hit the get "/sign-out" route -->
+  <a href="/" />Sign out</a>
+
+<% else %>
+
+  <!-- only show this code when signed out -->
+
+  <!-- <img src="./eye.png" class="eye"> -->
+  <div class="signs">
+    <a href="/sign-in" />Sign In</a>
+    <a href="/sign-up" />Sign Up</a>
+  </div>
+
+<% end %>
+</ul>

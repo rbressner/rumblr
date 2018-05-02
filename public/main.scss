@@ -1,3 +1,33 @@
 body {
-  background-image: url("./cactus.jpg");
+  background-color: black;
+  background-image: url("./eye.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  font-family: 'Cinzel', serif;
+  color: white;
+  text-align: center;
+}
+
+.signs {
+  position: absolute;
+  top: 55%;
+  left: 40%;
+  width: 20%;
+  a {
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    font-size: 200%;
+    text-decoration: none;
+  }
+}
+.eye {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 50%;
+
 }
