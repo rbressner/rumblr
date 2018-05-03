@@ -10,27 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_03_184705) do
+ActiveRecord::Schema.define(version: 2018_05_03_204056) do
 
-  create_table "posts", force: :cascade do |t|
-    t.string "firstname"
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at"
-    t.binary "image"
-    t.integer "user_id"
-  end
+# Could not dump table "posts" because of following StandardError
+#   Unknown type 'bytea' for column 'image'
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
-    t.string "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.date "birthday"
-    t.string "lastname"
-    t.string "gender"
-    t.binary "propic"
-  end
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'bytea' for column 'propic'
 
 end
