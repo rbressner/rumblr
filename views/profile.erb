@@ -1,6 +1,7 @@
 <% if session[:user_id] %>
+<img src="<%= @propic %>" class="propic">
 
-<h1>Hello, <%= @name %></h1>
+<h1><%= @name %></h1>
 
 <a href="/new-post" class="new-post-btn"><img src="./add1.png"></a>
 

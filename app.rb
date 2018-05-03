@@ -52,9 +52,12 @@ end
 post "/sign-up" do
   @user = User.create(
     username: params[:username],
+    lastname: params[:lastname],
     password: params[:password],
     email: params[:email],
-    birthday: params[:birthday]
+    birthday: params[:birthday],
+    gender: params[:gender],
+    propic: params[:propic]
   )
   @name = params[:username]
 
@@ -91,7 +94,7 @@ get "/profile" do
 
   @user = User.find(session[:user_id])
   @name = @user.username
-
+  @propic = @user.propic
   @posts = @user.posts
   puts "i want my #{@posts}"
   # @posts = @user.profile.posts
