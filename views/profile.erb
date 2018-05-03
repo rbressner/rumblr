@@ -1,5 +1,10 @@
+<% if session[:user_id] %>
+
 <h1>Hello, <%= @name %></h1>
 
-<%= @posts %>
+<a href="/new-post" class="new-post-btn"><img src="./add1.png"></a>
 
+<br>
 <a href="/sign-out" />Sign out</a>
+
+<% end %>

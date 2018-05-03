@@ -92,16 +92,13 @@ get "/profile" do
   @user = User.find(session[:user_id])
   @name = @user.username
 
-  @posts = Post.find_by(session[:user_id])
-  puts @posts
+  @posts = @user.posts
+  puts "i want my #{@posts}"
   # @posts = @user.profile.posts
 
   erb :profile
 end
 
 post "/profile" do
-  @profile = Profile.create(
-    username: params[:username],
-    content: params[:content]
-  )
+
 end

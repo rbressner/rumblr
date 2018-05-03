@@ -10,7 +10,13 @@
   <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 </head>
 <body>
+  <% if session[:user_id] %>
 
+<nav>
+
+</nav>
+
+<% end %>
 
   <%= yield %>
 
