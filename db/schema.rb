@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_03_001223) do
+ActiveRecord::Schema.define(version: 2018_05_03_184705) do
 
   create_table "posts", force: :cascade do |t|
     t.string "firstname"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2018_05_03_001223) do
     t.datetime "updated_at"
     t.date "birthday"
     t.string "lastname"
+    t.string "gender"
+    t.binary "propic"
   end
 
 end
