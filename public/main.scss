@@ -51,9 +51,13 @@ input[type=submit]:hover {
 }
 .propic {
   width: 10%;
-  height: 150px;
-  border-radius: 80%;
 }
 .enter-phrase {
   color: purple;
+}
+.posts {
+  li {
+    list-style-type: none;
+    
+  }
 }

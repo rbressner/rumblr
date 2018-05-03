@@ -4,6 +4,18 @@
 <h1><%= @name %></h1>
 
 <a href="/new-post" class="new-post-btn"><img src="./add1.png"></a>
+<br>
+
+
+<ul class="posts">
+  <% @posts.each do |post| %>
+  <div class="post-tile">
+  <li><%=post.title%></li>
+  <li><%=post.content%></li>
+  <li><img src="<%=post.image%>"></li>
+</div>
+  <% end %>
+</ul>
 
 <br>
 <a href="/sign-out" />Sign out</a>

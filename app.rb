@@ -5,7 +5,13 @@ require "./models"
 
 enable :sessions
 
-set :database, "sqlite3:app.db"
+configure :development do
+  set :database, "sqlite3:app.db"
+end
+
+configure :production do
+  set :database, ENV["DATABASE_URL"]
+end
 
 get "/" do
   if session[:user_id]
@@ -80,10 +86,12 @@ get "/new-post" do
 end
 
 post "/new-post" do
+  @user = User.find(session[:user_id])
   @post = Post.create(
     title: params[:title],
     content: params[:content],
-    image: params[:image]
+    image: params[:image],
+    user_id: @user.id
   )
   session[:post_id] = @post.id
 
@@ -96,8 +104,9 @@ get "/profile" do
   @name = @user.username
   @propic = @user.propic
   @posts = @user.posts
+
   puts "i want my #{@posts}"
-  # @posts = @user.profile.posts
+
 
   erb :profile
 end

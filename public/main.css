@@ -48,11 +48,12 @@ input[type=submit]:hover {
   cursor: pointer; }
 
 .propic {
-  width: 10%;
-  height: 150px;
-  border-radius: 80%; }
+  width: 10%; }
 
 .enter-phrase {
   color: purple; }
+
+.posts li {
+  list-style-type: none; }
 
 /*# sourceMappingURL=main.css.map */

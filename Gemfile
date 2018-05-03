@@ -6,8 +6,13 @@ ruby '2.4.1'
 gem "sinatra"
 gem "sinatra-flash"
 gem "activerecord"
-gem "sqlite3"
 gem "sinatra-activerecord"
 gem "rake"
+group :development do
+  gem "sqlite3"
+end
 
+group :production do
+  gem "pg"
+end
 end
