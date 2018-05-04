@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_03_210210) do
+ActiveRecord::Schema.define(version: 2018_05_04_204225) do
 
   create_table "posts", force: :cascade do |t|
     t.string "firstname"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_05_03_210210) do
     t.text "content"
     t.datetime "created_at"
     t.integer "user_id"
-    t.binary "image"
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2018_05_03_210210) do
     t.date "birthday"
     t.string "lastname"
     t.string "gender"
-    t.binary "propic"
+    t.string "propic"
   end
 
 end

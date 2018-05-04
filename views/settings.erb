@@ -1,0 +1,12 @@
+  <% if session[:user_id] %>
+  <img src="<%= @propic %>" class="propic">
+  <h4>Name: <%= @name %></h4>
+  <h4>Email: <%= @email %></h4>
+  <h4>Birthday: <%= @birthday %></h4>
+  <form action="/settings" method="post">
+  <button class="delete">Delete Account</button>
+</form>
+
+  <% else %>
+<h1>You must be signed in to view this page</h1>
+  <% end %>

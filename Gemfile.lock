@@ -14,9 +14,14 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     concurrent-ruby (1.0.5)
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    imgur-api (0.0.4)
+      httparty
     minitest (5.11.3)
+    multi_xml (0.6.0)
     mustermann (1.0.2)
     pg (1.0.0)
     rack (2.0.5)
@@ -44,6 +49,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord!
+  imgur-api!
   pg!
   rake!
   sinatra!

@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Rumblr</title>
+  <% if session[:user_id] %>
+  <link rel="icon" href="<%= @propic %>" type="image/gif" sizes="16x16">
+  <% else %>
   <link rel="icon" href="./favicon.png" type="image/gif" sizes="16x16">
+  <% end %>
   <link rel="stylesheet" type="text/css" href="main.css">
   <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 </head>
@@ -13,11 +17,25 @@
   <% if session[:user_id] %>
 
 <nav>
-
+  <a href="/profile" class="logo-menu"><img src="./favicon.png"></a>
+  <div class="dropdown">
+    <button class="dropbtn"><img src="menu.png" class="profile-menu"></button>
+  <div class="dropdown-content">
+    <a href="/profile">Profile</a>
+    <a href="/settings">Settings</a>
+    <a href="/sign-out">Logout</a>
+  </div>
+</div>
 </nav>
-
+<br>
+<% else %>
+<nav>
+  <a href="/" class="logo-menu"><img src="./favicon.png"></a>
+<ul>
+</ul>
+</nav>
+<br>
 <% end %>
-
   <%= yield %>
 
 <script type="text/javascript" src="main.js"></script>

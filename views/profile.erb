@@ -1,6 +1,9 @@
 <% if session[:user_id] %>
-
+<% if @propic != nil %>
 <img src="<%= @propic %>" class="propic">
+<% else %>
+<img src="./avatar.png" class="propic">
+<% end %>
 <h1><%= @name %></h1>
 
 <a href="/new-post" class="new-post-btn"><img src="./add1.png"></a>
@@ -17,8 +20,6 @@
   <% end %>
 </ul>
 
-<br>
-<a href="/sign-out" />Sign out</a>
 
 <% else %>
 

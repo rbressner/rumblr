@@ -8,6 +8,7 @@ gem "sinatra-flash"
 gem "activerecord"
 gem "sinatra-activerecord"
 gem "rake"
+gem 'imgur-api'
 group :development do
   gem "sqlite3"
 end
