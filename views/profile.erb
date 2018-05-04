@@ -1,6 +1,6 @@
 <% if session[:user_id] %>
-<img src="<%= @propic %>" class="propic">
 
+<img src="<%= @propic %>" class="propic">
 <h1><%= @name %></h1>
 
 <a href="/new-post" class="new-post-btn"><img src="./add1.png"></a>
@@ -10,14 +10,19 @@
 <ul class="posts">
   <% @posts.each do |post| %>
   <div class="post-tile">
-  <li><%=post.title%></li>
-  <li><%=post.content%></li>
-  <li><img src="<%=post.image%>"></li>
+  <li class="post-title"><%=post.title%></li>
+  <li class="post-content"><%=post.content%></li>
+  <li><img src="<%=post.image%>" class="post-image"></li>
 </div>
   <% end %>
 </ul>
 
 <br>
 <a href="/sign-out" />Sign out</a>
+
+<% else %>
+
+<h1>You must be signed in to view this page</h1>
+<a href="/">Home</a>
 
 <% end %>

@@ -21,26 +21,6 @@ body {
   left: 0;
   width: 20%; }
 
-input[type=text], input[type=email], input[type=password] {
-  width: 20%;
-  height: 40px;
-  border: 1px solid black; }
-
-input[type=file] {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border: 1px solid black; }
-
-input[type=date] {
-  height: 40px;
-  border: 1px solid black; }
-
-input[type=file]:hover {
-  cursor: pointer; }
-
-input[type=submit] {
-  height: 40px; }
-
 input[type=submit]:hover {
   cursor: pointer; }
 
@@ -53,7 +33,47 @@ input[type=submit]:hover {
 .enter-phrase {
   color: purple; }
 
-.posts li {
-  list-style-type: none; }
+.posts {
+  display: flex; }
+  .posts .post-tile {
+    width: 30%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around; }
+  .posts li {
+    list-style-type: none;
+    display: inline-grid;
+    width: 30%; }
+  .posts .post-title {
+    font-size: 150%; }
+  .posts .post-image {
+    width: 50%; }
+
+input[type=text], input[type=file], input[type=date], input[type=password], input[type=email], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center; }
+
+input[type=submit] {
+  width: 50%;
+  background-color: purple;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center; }
+
+input[type=submit]:hover {
+  opacity: 0.6; }
+
+.post-tile {
+  width: 30%; }
 
 /*# sourceMappingURL=main.css.map */
