@@ -128,9 +128,11 @@ get "/profile" do
   erb :profile
 end
 
-post "/profile" do
+# post "/profile" do
+#
+# end
 
-end
+
 
 get "/settings" do
   @user = User.find(session[:user_id])
