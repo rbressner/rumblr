@@ -30,8 +30,10 @@
    function statusChangeCallback(response){
      if(response.status === 'connected'){
        console.log('logged in')
+       window.location.replace("/profile")
      } else {
        console.log('it did not work')
+       alert "User information incorrect"
      }
    }
    function checkLoginState() {
