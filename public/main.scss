@@ -71,6 +71,21 @@ footer {
   text-align: center;
   display: flex;
   flex-flow: column-reverse;
+  .post-tile:hover {
+    animation: popout 1s forwards;
+  }
+  @keyframes popout {
+    from {
+      width: 60%;
+      box-shadow: 0 4px 8px 0 rgba(144, 0, 125, 0.2);
+      margin-left: 17%;
+    }
+    to {
+      width: 75%;
+      box-shadow: 0 6px 10px 0 rgba(144, 0, 125, 0.2);
+      margin-left: 8%;
+    }
+  }
   li {
     list-style-type: none;
     padding: 3px;
@@ -79,7 +94,7 @@ footer {
     font-size: 150%;
   }
   .post-image {
-    width: 35%;
+    width: 65%;
     padding-bottom: 20px;
   }
 }
