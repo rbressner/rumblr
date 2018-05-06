@@ -27,31 +27,51 @@ body {
 input[type=submit]:hover {
   cursor: pointer;
 }
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: purple;
+  color: white;
+  text-align: center;
+}
+.profile-info {
+  float: left;
+  width: 20%;
+  margin-left: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  .propic {
+    width: 50%;
+  }
+}
 .new-post-btn:hover {
   cursor: pointer;
-}
-.propic {
-  width: 10%;
 }
 .enter-phrase {
   color: purple;
 }
 .posts {
-  .post-tile {
-    display: flex;
-    flex-flow: column;
-  }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 45%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-flow: column-reverse;
   li {
     list-style-type: none;
+    padding: 3px;
   }
   .post-title {
     font-size: 150%;
   }
   .post-image {
     width: 25%;
+    padding-bottom: 20px;
   }
 }
-input[type=text], input[type=file], input[type=date], input[type=password], input[type=email], select {
+input[type=text], input[type=file], input[type=date], textarea, input[type=password], input[type=email], select {
     width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -139,7 +159,7 @@ nav {
     background-color: transparent;
 }
 .delete {
-  width: 20%;
+  width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -175,4 +195,13 @@ input[type=text]:focus {
   background-image: url("./search.png");
   background-repeat: no-repeat;
   background-position: left;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  .propic {
+    width: 40%;
+  }
 }

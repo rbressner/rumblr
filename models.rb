@@ -2,9 +2,6 @@ class User < ActiveRecord::Base
   has_one :profiles
   has_many :posts
   has_many :searches
-  def self.search(keyword)
-    where("username like ?", "%#{keyword}%")
-  end
 end
 
 
@@ -14,4 +11,7 @@ end
 
 class Search < ActiveRecord::Base
   belongs_to :users
+  def self.search(keyword)
+    where("username like ?", "%#{keyword}%")
+  end
 end
