@@ -167,7 +167,12 @@ end
 
 get '/search'  do
   @results = User.where(:username => "#{params[:keyword]}")
+  @search = Search.keyword
   puts "give me my #{@results}"
+  if session[:user_id] != nil
+  @user = User.find(session[:user_id])
+  @propic = @user.propic
+end
 erb :results
 end
 
