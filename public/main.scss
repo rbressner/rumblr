@@ -37,23 +37,18 @@ input[type=submit]:hover {
   color: purple;
 }
 .posts {
-  display: flex;
   .post-tile {
-    width: 30%;
     display: flex;
     flex-flow: column;
-    justify-content: space-around;
   }
   li {
     list-style-type: none;
-    display: inline-grid;
-    width: 30%;
   }
   .post-title {
     font-size: 150%;
   }
   .post-image {
-    width: 50%;
+    width: 25%;
   }
 }
 input[type=text], input[type=file], input[type=date], input[type=password], input[type=email], select {
@@ -81,9 +76,6 @@ input[type=submit] {
 
 input[type=submit]:hover {
     opacity: 0.6;
-}
-.post-tile {
-  width: 30%;
 }
 nav {
   width: 100%;
@@ -159,4 +151,28 @@ nav {
 }
 .delete:hover {
   cursor: pointer;
+}
+.search-bar {
+  input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+    float: left;
+    margin-top: 13px;
+}
+
+input[type=text]:focus {
+    width: 80%;
+}
+}
+
+.search-bar-input {
+  background-image: url("./search.png");
+  background-repeat: no-repeat;
+  background-position: left;
 }

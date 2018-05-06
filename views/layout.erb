@@ -18,6 +18,10 @@
 
 <nav>
   <a href="/profile" class="logo-menu"><img src="./favicon.png"></a>
+
+  <form class="search-bar" action="/search" method="get">
+  <input type="text" name="keyword" class="search-bar-input" placeholder="Search...">
+  </form>
   <div class="dropdown">
     <button class="dropbtn"><img src="menu.png" class="profile-menu"></button>
   <div class="dropdown-content">
@@ -31,6 +35,9 @@
 <% else %>
 <nav>
   <a href="/" class="logo-menu"><img src="./favicon.png"></a>
+  <form class="search-bar" action="/search", method="get">
+  <input type="text" name="search" class="search-bar-input" placeholder="Search..">
+  </form>
 <ul>
 </ul>
 </nav>

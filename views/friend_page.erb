@@ -1,4 +1,4 @@
-<% if session[:user_id] %>
+
 <% if @propic != nil %>
 <img src="<%= @propic %>" class="propic">
 <% else %>
@@ -6,13 +6,9 @@
 <% end %>
 <h1><%= @name %></h1>
 
-<aside class="profile-side">
-<a href="/new-post" class="new-post-btn"><img src="./add1.png"></a>
-</aside>
-<br>
 
 
-<article class="profile-feed">
+
 <ul class="posts">
   <% @posts.each do |post| %>
   <div class="post-tile">
@@ -22,11 +18,3 @@
 </div>
   <% end %>
 </ul>
-</article>
-
-<% else %>
-
-<h1>You must be signed in to view this page</h1>
-<a href="/">Home</a>
-
-<% end %>

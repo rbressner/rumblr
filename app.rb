@@ -155,3 +155,25 @@ post "/settings" do
 
   redirect "/"
 end
+
+get "/profile/:id" do
+  @user = User.find(params[:id])
+  @name = @user.username
+  @propic = @user.propic
+  @posts = @user.posts
+
+  erb :friend_page
+end
+
+get '/search'  do
+  @results = User.where(:username => "#{params[:keyword]}")
+  puts "give me my #{@results}"
+erb :results
+end
+
+post "/search" do
+  @search = Search.create(
+    keyword: params[:keyword]
+  )
+  redirect "/search"
+end
