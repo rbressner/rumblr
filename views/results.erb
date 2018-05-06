@@ -1,12 +1,11 @@
   <% if @results %>
-  <table>
-    <%@results.each do |r|%>
-    <tr>
-      <td><%=r.username%></td>
-    </tr>
-    <%end%>
-  </table>
+  <ul>
+    <% @results.each do |result| %>
+    <li><%=result.username%></li>
+    <% end %>
+    <% end %>
+
   <% if @results != nil %>
   <h1>We did not find any results for <%= @search %></h1>
-    <% end %>
+
   <% end %>

@@ -1,19 +1,29 @@
 
 <h1>Sign Up</h1>
-
-<form action="/sign-up" method="post" enctype="multipart/form-data">
-  <input type="text" name="username" id="firstname" placeholder="First Name">
+<div class="or-line">
+        <span class="or">or</span>
+      </div>
+<form action="/sign-up" method="post" enctype="multipart/form-data" class="sign-up-form">
+  <p>First Name:</p>
+  <input type="text" name="username" id="firstname" placeholder="First Name" required>
+  <p>Last name:</p>
   <input type="text" name="lastname" id="lastname" placeholder="Last Name">
-  <input type="password" name="password" id="password" placeholder="Password">
-  <input type="email" name="email" id="email" placeholder="Email">
-  <input type="date" name="birthday" id="birthday" placeholder="Birthday">
+  <p>Password:</p>
+  <input type="password" name="password" id="password" placeholder="Password" required>
+  <p>Email:</p>
+  <input type="email" name="email" id="email" placeholder="Email" required>
+  <p>Birthday:</p>
+  <input type="date" name="birthday" id="birthday" placeholder="Birthday" required>
+  <p>Gender:</p>
   <select name="gender" id="gender">
     <option>Male</option>
     <option>Female</option>
   </select>
-  <input type="file" name="propic" id="pro-pic" placeholder="Profile Picture">
+  <p>Profile Picture:</p>
+  <input type="file" name="propic" id="pro-pic" placeholder="Profile Picture" required>
   <input type="submit" value="Go" href="/profile">
 </form>
+
 <script>
   window.fbAsyncInit = function() {
     FB.init({

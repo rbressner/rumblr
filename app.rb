@@ -40,7 +40,7 @@ post "/sign-in" do
     redirect "/profile"
   else
 
-    flash[:warning] = "Your username or password is incorrect"
+    flash[:warning] = "Your email or password is incorrect"
 
 
     redirect "/"
@@ -77,7 +77,6 @@ post "/sign-up" do
   session[:user_id] = @user.id
 
 
-
   redirect "/profile"
 end
 
@@ -90,7 +89,8 @@ get "/sign-out" do
 end
 
 get "/new-post" do
-
+  @user = User.find(session[:user_id])
+  @propic = @user.propic
   erb :new_post
 end
 
@@ -108,7 +108,7 @@ post "/new-post" do
     image: @filename,
     user_id: @user.id
   )
-  session[:post_id] = @post.id
+
 
 
 
@@ -157,7 +157,7 @@ post "/settings" do
 end
 
 get "/profile/:id" do
-  @user = User.find(params[:id])
+  @user = User.find(:id)
   @name = @user.username
   @propic = @user.propic
   @posts = @user.posts
@@ -167,7 +167,7 @@ end
 
 get '/search'  do
   @results = User.where(:username => "#{params[:keyword]}")
-  @search = Search.keyword
+  @search = params[:keyword]
   puts "give me my #{@results}"
   if session[:user_id] != nil
   @user = User.find(session[:user_id])
@@ -177,8 +177,10 @@ erb :results
 end
 
 post "/search" do
+  @user = User.find(session[:user_id])
   @search = Search.create(
-    keyword: params[:keyword]
+    keyword: params[:keyword],
+    user_id: @user.id
   )
   redirect "/search"
 end

@@ -11,7 +11,4 @@ end
 
 class Search < ActiveRecord::Base
   belongs_to :users
-  def self.search(keyword)
-    where("username like ?", "%#{keyword}%")
-  end
 end

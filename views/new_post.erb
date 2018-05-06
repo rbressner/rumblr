@@ -5,9 +5,12 @@
 <h1>New Post</h1>
 
 <form action="/new-post" method="post" enctype="multipart/form-data">
+  <p>Title:</p>
   <input type="text" name="title" class="title" placeholder="Title">
-  <textarea name="content" rows="10" cols="30" class="content">Enter Content Here...</textarea>
-  <input type="file" name="image" class="image" placeholder="Image">
+  <p>Content:</p>
+  <textarea name="content" rows="10" cols="30" class="content" placeholder="Enter Content Here..."></textarea>
+  <p>Image:</p>
+  <input type="file" name="image" class="image" placeholder="Image" required>
   <input type="submit" value="Go" href="/profile">
 </form>
 
