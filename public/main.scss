@@ -274,7 +274,8 @@ input[type=text]:focus {
 .like-btn {
   float: right;
   background-color: transparent;
-  border: 2px solid purple;
+  border: none;
+  border-radius: 50%;
 }
 .like-btn:hover {
   cursor: pointer;

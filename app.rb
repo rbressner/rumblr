@@ -157,7 +157,7 @@ post "/settings" do
 end
 
 get "/profile/:id" do
-  @user = User.find(session[:user_id])
+  @user = User.find_by(params[:user_id])
   @name = @user.username
   @propic = @user.propic
   @posts = @user.posts
