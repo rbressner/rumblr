@@ -12,5 +12,10 @@ If you are signing up for the first time, you have the option of entering via Fa
 
 
 Which would then bring you to the Profile page and blog feed - as well as the favicon being changed to the user's profile picture:
-![Profile](https://i.imgur.com/d8GTyGy.png)
 ![Favicon](https://i.imgur.com/zP53hb1.png)
+![Profile](https://i.imgur.com/d8GTyGy.png)
+
+# Languages
+The Front_End of this app is built on HTML, SASS/CSS and Javascript.
+The Back-End of this site is built on Ruby with Sinatra as a microframework alongside ActiveRecord.
+The Servers being used are sqlite3 and postgresql.
