@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_06_135401) do
+ActiveRecord::Schema.define(version: 2018_06_10_172859) do
 
   create_table "posts", force: :cascade do |t|
     t.string "firstname"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2018_05_06_135401) do
     t.text "content"
     t.datetime "created_at"
     t.integer "user_id"
-    t.string "image"
   end
 
   create_table "searches", force: :cascade do |t|
@@ -35,7 +34,6 @@ ActiveRecord::Schema.define(version: 2018_05_06_135401) do
     t.date "birthday"
     t.string "lastname"
     t.string "gender"
-    t.string "propic"
   end
 
 end
