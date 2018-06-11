@@ -57,12 +57,12 @@ get "/sign-up" do
 end
 
 post "/sign-up" do
-  @filename = params[:propic][:filename]
-  file = params[:propic][:tempfile]
-
-  File.open("./public/#{@filename}", 'wb') do |f|
-    f.write(file.read)
-  end
+  # @filename = params[:propic][:filename]
+  # file = params[:propic][:tempfile]
+  #
+  # File.open("./public/#{@filename}", 'wb') do |f|
+  #   f.write(file.read)
+  # end
   @user = User.create(
     username: params[:username],
     lastname: params[:lastname],
@@ -70,7 +70,6 @@ post "/sign-up" do
     email: params[:email],
     birthday: params[:birthday],
     gender: params[:gender],
-    propic: @filename
   )
   @name = params[:username]
 
@@ -90,22 +89,20 @@ end
 
 get "/new-post" do
   @user = User.find(session[:user_id])
-  @propic = @user.propic
   erb :new_post
 end
 
 post "/new-post" do
-  @filename = params[:image][:filename]
-  file = params[:image][:tempfile]
-
-  File.open("./public/#{@filename}", 'wb') do |f|
-    f.write(file.read)
-  end
+  # @filename = params[:image][:filename]
+  # file = params[:image][:tempfile]
+  #
+  # File.open("./public/#{@filename}", 'wb') do |f|
+  #   f.write(file.read)
+  # end
   @user = User.find(session[:user_id])
   @post = Post.create(
     title: params[:title],
     content: params[:content],
-    image: @filename,
     user_id: @user.id
   )
 
@@ -119,7 +116,6 @@ get "/profile" do
 
   @user = User.find(session[:user_id])
   @name = @user.username
-  @propic = @user.propic
   @posts = @user.posts
 
   puts "i want my #{@posts}"
@@ -137,7 +133,6 @@ end
 get "/settings" do
   @user = User.find(session[:user_id])
   @name = @user.username + " " + @user.lastname
-  @propic = @user.propic
   @email = @user.email
   @gender = @user.gender
   @birthday = @user.birthday
@@ -159,7 +154,6 @@ end
 get "/profile/:id" do
   @user = User.find_by(params[:user_id])
   @name = @user.username
-  @propic = @user.propic
   @posts = @user.posts
 
   erb :friend_page
@@ -171,7 +165,6 @@ get '/search'  do
   puts "give me my #{@results}"
   if session[:user_id] != nil
   @user = User.find(session[:user_id])
-  @propic = @user.propic
 end
 erb :results
 end
