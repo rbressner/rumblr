@@ -1,11 +1,7 @@
 
 <div class="profile-info">
 <% if session[:user_id] %>
-<% if @propic != nil %>
-<img src="<%= @propic %>" class="propic">
-<% else %>
 <img src="./avatar.png" class="propic">
-<% end %>
 <h1><%= @name %></h1>
 
 <p class="new-post-label">New Post:</p>
@@ -20,7 +16,6 @@
   <div class="post-tile">
   <li class="post-title"><%=post.title%></li>
   <li class="post-content"><%=post.content%></li>
-  <li><img src="<%=post.image%>" class="post-image"></li>
   <button type="button" class="like-btn"><img src="like.png"></button>
 </div>
   <% end %>
@@ -29,7 +24,7 @@
 
 <% else %>
 
-<h1>You must be signed in to view this page</h1>
+<h1>You must be signed in to view this page!</h1>
 <a href="/">Home</a>
 
 <% end %>
