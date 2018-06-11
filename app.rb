@@ -57,19 +57,12 @@ get "/sign-up" do
 end
 
 post "/sign-up" do
-  # @filename = params[:propic][:filename]
-  # file = params[:propic][:tempfile]
-  #
-  # File.open("./public/#{@filename}", 'wb') do |f|
-  #   f.write(file.read)
-  # end
   @user = User.create(
     username: params[:username],
     lastname: params[:lastname],
     password: params[:password],
     email: params[:email],
     birthday: params[:birthday],
-    gender: params[:gender],
   )
   @name = params[:username]
 
@@ -93,12 +86,6 @@ get "/new-post" do
 end
 
 post "/new-post" do
-  # @filename = params[:image][:filename]
-  # file = params[:image][:tempfile]
-  #
-  # File.open("./public/#{@filename}", 'wb') do |f|
-  #   f.write(file.read)
-  # end
   @user = User.find(session[:user_id])
   @post = Post.create(
     title: params[:title],
@@ -134,7 +121,6 @@ get "/settings" do
   @user = User.find(session[:user_id])
   @name = @user.username + " " + @user.lastname
   @email = @user.email
-  @gender = @user.gender
   @birthday = @user.birthday
   # @delete = @user.destroy
   erb :settings
